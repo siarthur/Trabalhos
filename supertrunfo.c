@@ -11,7 +11,7 @@ int main(){
 // Dados da primeira carta
     printf("Informações da primeira carta:\n");
     printf("Nome da Cidade: ");
-    scanf(" %s[^\n]", cidade1);
+    scanf(" %s", cidade1);
 
     printf("População: ");
     scanf("%d", &populacao1);
@@ -29,7 +29,7 @@ int main(){
 // Dados da segunda carta
     printf("\nInformações da segunda carta:\n");
     printf("Nome da Cidade: ");
-    scanf(" %s[^\n]", cidade2);
+    scanf(" %s", cidade2);
 
     printf("População: ");
     scanf("%d", &populacao2);
