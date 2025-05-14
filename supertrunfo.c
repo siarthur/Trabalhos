@@ -58,4 +58,5 @@ int main(){
     printf("Número de Pontos Turísticos: %d\n", pontosturisticos2);
 
     return 0;
+
 }
