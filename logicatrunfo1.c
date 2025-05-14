@@ -1,76 +1,87 @@
 #include <stdio.h>
 
-// Estrutura da carta
-struct Carta {
-    char estado[30];
-    char codigo[10];
-    char cidade[30];
-    int populacao;
-    float area;
-    float pib;
-    int pontosTuristicos;
-    float densidadePopulacional;
-    float pibPerCapita;
-};
+int main() {
+    // Declaração das variáveis para a Carta 1
+    char estado1[30], codigo1[10], cidade1[30];
+    int populacao1, pontosTuristicos1;
+    float area1, pib1, densidade1, pibPerCapita1;
 
-// Calcula densidade e PIB per capita
-void calcularIndicadores(struct Carta *carta) {
-    carta->densidadePopulacional = carta->populacao / carta->area;
-    carta->pibPerCapita = carta->pib / carta->populacao;
-}
-
-// Le os dados da carta e calcula/exibe os indicadores
-void lerCarta(struct Carta *carta, int numero) {
-    printf("Digite os dados da Carta %d:\n", numero);
+    // Entrada de dados para a primeira carta
+    printf("Digite os dados da Carta 1:\n");
 
     printf("Estado: ");
-    scanf(" %[^\n]", carta->estado);
+    scanf(" %[^\n]", estado1);
 
-    printf("Codigo da carta: ");
-    scanf(" %[^\n]", carta->codigo);
+    printf("Codigo: ");
+    scanf(" %[^\n]", codigo1);
 
-    printf("Nome da cidade: ");
-    scanf(" %[^\n]", carta->cidade);
+    printf("Cidade: ");
+    scanf(" %[^\n]", cidade1);
 
     printf("Populacao: ");
-    scanf("%d", &carta->populacao);
+    scanf("%d", &populacao1);
 
     printf("Area (km2): ");
-    scanf("%f", &carta->area);
+    scanf("%f", &area1);
 
     printf("PIB (em bilhoes): ");
-    scanf("%f", &carta->pib);
+    scanf("%f", &pib1);
 
-    printf("Numero de pontos turisticos: ");
-    scanf("%d", &carta->pontosTuristicos);
+    printf("Pontos turisticos: ");
+    scanf("%d", &pontosTuristicos1);
 
-    // Calculo dos indicadores
-    calcularIndicadores(carta);
+    // Calculo dos indicadores da carta 1
+    densidade1 = populacao1 / area1;
+    pibPerCapita1 = pib1 / populacao1;
 
-    // Exibe os calculos
-    printf("Densidade Populacional: %.2f hab/km2\n", carta->densidadePopulacional);
-    printf("PIB per capita: R$ %.2f\n\n", carta->pibPerCapita);
-}
+    printf("\n");
 
-int main() {
-    struct Carta carta1, carta2;
+    // Declaração das variáveis para a Carta 2
+    char estado2[30], codigo2[10], cidade2[30];
+    int populacao2, pontosTuristicos2;
+    float area2, pib2, densidade2, pibPerCapita2;
 
-    // Leitura das cartas
-    lerCarta(&carta1, 1);
-    lerCarta(&carta2, 2);
+    // Entrada de dados para a segunda carta
+    printf("Digite os dados da Carta 2:\n");
 
-    // Comparacao por Densidade Populacional
-    printf("Comparacao de cartas (Atributo: Densidade Populacional):\n\n");
-    printf("Carta 1 - %s (%s): %.2f hab/km2\n", carta1.cidade, carta1.estado, carta1.densidadePopulacional);
-    printf("Carta 2 - %s (%s): %.2f hab/km2\n", carta2.cidade, carta2.estado, carta2.densidadePopulacional);
+    printf("Estado: ");
+    scanf(" %[^\n]", estado2);
 
-    // Determinacao do vencedor (menor densidade vence)
-    if (carta1.densidadePopulacional < carta2.densidadePopulacional) {
-        printf("Resultado: Carta 1 (%s) venceu!\n", carta1.cidade);
-    } else if (carta2.densidadePopulacional < carta1.densidadePopulacional) {
-        printf("Resultado: Carta 2 (%s) venceu!\n", carta2.cidade);
+    printf("Codigo: ");
+    scanf(" %[^\n]", codigo2);
+
+    printf("Cidade: ");
+    scanf(" %[^\n]", cidade2);
+
+    printf("Populacao: ");
+    scanf("%d", &populacao2);
+
+    printf("Area (km2): ");
+    scanf("%f", &area2);
+
+    printf("PIB (em bilhoes): ");
+    scanf("%f", &pib2);
+
+    printf("Pontos turisticos: ");
+    scanf("%d", &pontosTuristicos2);
+
+    // Calculo dos indicadores da carta 2
+    densidade2 = populacao2 / area2;
+    pibPerCapita2 = pib2 / populacao2;
+
+    // Mostrar os indicadores
+    printf("\n--- Densidade populacional ---\n");
+    printf("Carta 1 - %s: %.2f hab/km2\n", cidade1, densidade1);
+    printf("Carta 2 - %s: %.2f hab/km2\n", cidade2, densidade2);
+
+    // Comparacao pela densidade (menor vence)
+    printf("\nResultado:\n");
+    if (densidade1 < densidade2) {
+        printf("Carta 1 (%s) venceu!\n", cidade1);
+    } else if (densidade2 < densidade1) {
+        printf("Carta 2 (%s) venceu!\n", cidade2);
     } else {
-        printf("Resultado: Empate!\n");
+        printf("Empate!\n");
     }
 
     return 0;
