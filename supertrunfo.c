@@ -8,7 +8,7 @@ int main(){
     int pontosturisticos1, pontosturisticos2;
     float area1, area2, pib1, pib2;
 
-// Dados da primeira carta
+    // Dados da primeira carta
     printf("Informações da primeira carta:\n");
     printf("Nome da Cidade: ");
     scanf(" %s", cidade1);
@@ -22,11 +22,10 @@ int main(){
     printf("Área da Cidade: ");
     scanf("%f", &area1);
 
-
     printf("PIB da Cidade: ");
     scanf("%f", &pib1);
 
-// Dados da segunda carta
+    // Dados da segunda carta
     printf("\nInformações da segunda carta:\n");
     printf("Nome da Cidade: ");
     scanf(" %s", cidade2);
@@ -43,7 +42,7 @@ int main(){
     printf("PIB da Cidade: ");
     scanf("%f", &pib2);
 
-// Exibição dos dados
+    // Exibição dos dados
     printf("\n--- Dados da Primeira Carta ---\n");
     printf("Nome da Cidade: %s\n", cidade1);
     printf("População: %d habitantes\n", populacao1);
@@ -59,5 +58,4 @@ int main(){
     printf("Número de Pontos Turísticos: %d\n", pontosturisticos2);
 
     return 0;
-
 }
